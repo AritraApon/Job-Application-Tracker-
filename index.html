@@ -16,10 +16,10 @@
 
 </head>
 
-<body class="">
+<body class="min-h-screen bg-[#b0b0ec28]">
     <header class="w-[80%] mx-auto pt-5 space-y-7">
 
-        <h1 class="text-2xl md:text-4xl font-extrabold">Job Application Tracker</h1>
+        <h1 class="text-2xl md:text-5xl font-extrabold">Job Application Tracker</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 ">
             <!-- total card  -->
             <div class="bg-base-100 shadow py-5 px-3 rounded-lg border border-amber-300">
@@ -43,12 +43,119 @@
 
         <p class="border"></p>
     </header>
-    <main>
-            <div>
-                <h1>Available Jobs</h1>
-                <!-- id AvailableJosNumber  -->
-                <p id="AvailableJosNumber"><span id=""></span>0</p>
+    <main class="w-[80%] mx-auto pt-5 space-y-7">
+        <div class="flex justify-between">
+            <h1 class="text-xl md:text-3xl font-bold">Available Jobs</h1>
+            <!-- id AvailableJosNumber  -->
+            <p id="AvailableJosNumber" class="font-medium"><span id="">0 </span>jobs</p>
+        </div>
+        <section>
+            <!-- toggle button  -->
+            <div class="space-x-2">
+                <!-- id toggleAllBtn  -->
+                <button id="toggleAllBtn" class="btn  text-base-300 bg-[#3b82f6]  ">All</button>
+                <!-- id toggleInterviewBtn  -->
+                <button id="toggleInterviewBtn" class="btn  ">Interview</button>
+                <!-- id  toggleRejectedBtn -->
+                <button id="toggleRejectedBtn" class="btn  ">Rejected</button>
             </div>
+        </section>
+        <section id="allCards" class="space-y-5">
+            <!-- card 1  -->
+            <div class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="font-medium text-[1.25rem]">Mobile First Corp</h1>
+                        <!-- job role  -->
+                        <p class="font-light">React Native Developer</p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="text-xs">Remote
+                        •
+                        Full-time
+                        •
+                        $130,000 - $175,000</p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class=" w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">Not Applied
+                        </p>
+                        <p class="text-[14px] md:text-[1rem]">Build cross-platform mobile applications using React
+                            Native. Work on products used by
+                            millions of users worldwide.</p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton" class="btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn"
+                    class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 2  -->
+            <div class="  flex  justify-between gap-2 bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="font-medium text-[1.25rem]">Mobile First Corp</h1>
+                        <!-- job role  -->
+                        <p class="font-light">React Native Developer</p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="text-xs">Remote
+                        •
+                        Full-time
+                        •
+                        $130,000 - $175,000</p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class=" w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">Not Applied
+                        </p>
+                        <p class="text-[14px] md:text-[1rem]">Build cross-platform mobile applications using React
+                            Native. Work on products used by
+                            millions of users worldwide.</p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton" class="btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5 ">
+                    <button id="dltBtn" class="btn hover:bg-red-300 border-[#c10606]"><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+
+        </section>
     </main>
 
 
