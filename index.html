@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <!-- tailwind css and daisyUI  Cdn LInk -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body class="">
+    <header class="w-[80%] mx-auto pt-5 space-y-7">
+
+        <h1 class="text-2xl md:text-4xl font-extrabold">Job Application Tracker</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 ">
+            <!-- total card  -->
+            <div class="bg-base-100 shadow py-5 px-3 rounded-lg border border-amber-300">
+                <p class="text-xl font-medium">Total</p>
+                <!-- id: total  -->
+                <p id="total" class="text-xl text-yellow-500 font-medium">0</p>
+            </div>
+            <!-- Interview number card -->
+            <div class="bg-base-100 shadow py-5 px-3 rounded-lg border border-green-300">
+                <p class="text-xl font-medium">Interview</p>
+                <!-- id:interview -->
+                <p id="interview" class="text-xl text-green-500 font-medium">0</p>
+            </div>
+            <!-- rejected number card  -->
+            <div class="bg-base-100 shadow py-5 px-3 rounded-lg border border-red-300">
+                <p class="text-xl font-medium">Rejected</p>
+                <!-- id rejected  -->
+                <p id="rejected" class="text-xl text-red-500 font-medium">0</p>
+            </div>
+        </div>
+
+        <p class="border"></p>
+    </header>
+    <main>
+            <div>
+                <h1>Available Jobs</h1>
+                <!-- id AvailableJosNumber  -->
+                <p id="AvailableJosNumber"><span id=""></span>0</p>
+            </div>
+    </main>
+
+
+
+
+    <script src="node.js"></script>
+</body>
+
+</html>
