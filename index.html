@@ -51,7 +51,8 @@
             <!-- id AvailableJosNumber  -->
             <p id="AvailableJobNumber" class="font-medium">
                 <span class="hidden" id="interviewAvNUM">0</span>
-                <span class="hidden" id="rejectedAvNUM">0</span>
+                <span class="hidden" id="rejectedAvNUM">0 </span>
+                <span class="hidden" id="oF">of</span>
                 <span id="totalAvNum">0 </span> jobs
             </p>
         </div>
@@ -63,10 +64,10 @@
                 <button onclick="toggleClick('toggleAllBtn','allSection')" id="toggleAllBtn"
                     class="btn  text-base-300 bg-[#3b82f6]  ">All</button>
                 <!-- id toggleInterviewBtn  -->
-                <button onclick="toggleClick('toggleInterviewBtn','interviewCards','interviewAvNUM' )"
+                <button onclick="toggleClick('toggleInterviewBtn','interviewCards','interviewAvNUM', 'oF' )"
                     id="toggleInterviewBtn" class="btn  ">Interview</button>
                 <!-- id  toggleRejectedBtn -->
-                <button onclick="toggleClick('toggleRejectedBtn','rejectedCards','rejectedAvNUM')"
+                <button onclick="toggleClick('toggleRejectedBtn','rejectedCards','rejectedAvNUM', 'oF')"
                     id="toggleRejectedBtn" class="btn  ">Rejected</button>
             </div>
         </section>
