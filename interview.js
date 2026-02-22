@@ -112,11 +112,11 @@ function renderInterviewList() {
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
-
         `
+          cardNumberCount();
         // console.log(interview)
         interviewCards.appendChild(div)
     }
@@ -169,13 +169,15 @@ function renderRejectedList() {
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
         `
+          cardNumberCount();
         // console.log(interview)
         rejectedCards.appendChild(div)
     }
 
 }
+

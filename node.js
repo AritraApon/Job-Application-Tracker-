@@ -13,6 +13,9 @@ const rejectedCards = document.getElementById('rejectedCards');
 const allSection = document.getElementById('allSection');
 
 // interview array ane rejected array
+const totalAvNum = document.getElementById('totalAvNum');
+const AvailableJobNumber = document.getElementById('AvailableJobNumber');
+
 
 
 let interviewList = [];
@@ -20,9 +23,12 @@ let rejectedList = [];
 // let currentStatus = "all" ;
 
 function cardNumberCount() {
+    totalAvNum.innerText = allSection.children.length;
     total.innerText = allSection.children.length;
     interview.innerText = interviewList.length;
     rejected.innerText = rejectedList.length;
+
+
 }
 cardNumberCount()
 
@@ -32,7 +38,11 @@ const toggleAllBtn = document.getElementById('toggleAllBtn');
 const toggleInterviewBtn = document.getElementById('toggleInterviewBtn');
 const toggleRejectedBtn = document.getElementById('toggleRejectedBtn');
 
-function toggleClick(id1, id2) {
+
+const interviewAvNUM = document.getElementById('interviewAvNUM');
+const rejectedAvNUM = document.getElementById('rejectedAvNUM');
+
+function toggleClick(id1, id2, id3) {
     //    bg add
     toggleAllBtn.classList.add("text-base-500", "bg-base-300");
     toggleInterviewBtn.classList.add("text-base-500", "bg-base-300");
@@ -41,6 +51,10 @@ function toggleClick(id1, id2) {
     allSection.classList.add('hidden')
     interviewCards.classList.add('hidden')
     rejectedCards.classList.add('hidden')
+    // -----------------------------------------------------------------
+
+    interviewAvNUM.classList.add('hidden')
+    rejectedAvNUM.classList.add('hidden')
 
 
     // bg- remove
@@ -58,16 +72,30 @@ function toggleClick(id1, id2) {
     const showClick = document.getElementById(id2)
     showClick.classList.remove("hidden");
 
+    const showNUM = document.getElementById(id3);
+    showNUM.classList.remove("hidden");
+
+
 }
 
+// Delete Button
+//   const dltBtn = document.querySelectorAll(".dltBtn");
+//   for(let btn of dltBtn) {
+//     btn.addEventListener("click", function(event) {
+//       event.target.parentNode.parentElement.remove();
 
+//       cardNumberCount()
+//     });
 
+//   };
+const main = document.getElementById("main_div");
 
-
-
-
-
-
+main.addEventListener("click", function (event) {
+    if (event.target.classList.contains("dltBtn")) {
+        event.target.parentNode.parentElement.remove();
+        cardNumberCount();
+    }
+});
 
 
 

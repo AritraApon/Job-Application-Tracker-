@@ -45,11 +45,15 @@
     </header>
 
 
-    <main class="w-[80%] mx-auto pt-5 space-y-7">
+    <main id="main_div" class="w-[80%] mx-auto pt-5 space-y-7">
         <div class="flex justify-between">
             <h1 class="text-xl md:text-3xl font-bold">Available Jobs</h1>
             <!-- id AvailableJosNumber  -->
-            <p id="AvailableJosNumber" class="font-medium"><span id="">0 </span>jobs</p>
+            <p id="AvailableJobNumber" class="font-medium">
+                <span class="hidden" id="interviewAvNUM">0</span>
+                <span class="hidden" id="rejectedAvNUM">0</span>
+                <span id="totalAvNum">0 </span> jobs
+            </p>
         </div>
         <!-- toggle button section  -->
         <section>
@@ -59,11 +63,11 @@
                 <button onclick="toggleClick('toggleAllBtn','allSection')" id="toggleAllBtn"
                     class="btn  text-base-300 bg-[#3b82f6]  ">All</button>
                 <!-- id toggleInterviewBtn  -->
-                <button onclick="toggleClick('toggleInterviewBtn','interviewCards')" id="toggleInterviewBtn"
-                    class="btn  ">Interview</button>
+                <button onclick="toggleClick('toggleInterviewBtn','interviewCards','interviewAvNUM' )"
+                    id="toggleInterviewBtn" class="btn  ">Interview</button>
                 <!-- id  toggleRejectedBtn -->
-                <button onclick="toggleClick('toggleRejectedBtn','rejectedCards')" id="toggleRejectedBtn"
-                    class="btn  ">Rejected</button>
+                <button onclick="toggleClick('toggleRejectedBtn','rejectedCards','rejectedAvNUM')"
+                    id="toggleRejectedBtn" class="btn  ">Rejected</button>
             </div>
         </section>
 
@@ -115,7 +119,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -163,7 +167,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -212,7 +216,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -268,7 +272,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class=" dltBtn btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -324,7 +328,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -380,7 +384,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -436,7 +440,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -492,7 +496,7 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dlt" class="dltBtn  btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
