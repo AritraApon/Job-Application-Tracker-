@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="min-h-screen bg-[#b0b0ec28]">
+<body class="min-h-screen bg-[#b0b0ec28] py-10">
     <header class="w-[80%] mx-auto pt-5 space-y-7">
 
         <h1 class="text-2xl md:text-5xl font-extrabold">Job Application Tracker</h1>
@@ -43,36 +43,46 @@
 
         <p class="border"></p>
     </header>
+
+
     <main class="w-[80%] mx-auto pt-5 space-y-7">
         <div class="flex justify-between">
             <h1 class="text-xl md:text-3xl font-bold">Available Jobs</h1>
             <!-- id AvailableJosNumber  -->
             <p id="AvailableJosNumber" class="font-medium"><span id="">0 </span>jobs</p>
         </div>
+        <!-- toggle button section  -->
         <section>
             <!-- toggle button  -->
             <div class="space-x-2">
                 <!-- id toggleAllBtn  -->
-                <button id="toggleAllBtn" class="btn  text-base-300 bg-[#3b82f6]  ">All</button>
+                <button onclick="toggleClick('toggleAllBtn','allSection')" id="toggleAllBtn"
+                    class="btn  text-base-300 bg-[#3b82f6]  ">All</button>
                 <!-- id toggleInterviewBtn  -->
-                <button id="toggleInterviewBtn" class="btn  ">Interview</button>
+                <button onclick="toggleClick('toggleInterviewBtn','interviewCards')" id="toggleInterviewBtn"
+                    class="btn  ">Interview</button>
                 <!-- id  toggleRejectedBtn -->
-                <button id="toggleRejectedBtn" class="btn  ">Rejected</button>
+                <button onclick="toggleClick('toggleRejectedBtn','rejectedCards')" id="toggleRejectedBtn"
+                    class="btn  ">Rejected</button>
             </div>
         </section>
-        <section id="allCards" class="space-y-5">
+
+        <!-- all section  -->
+        <section id="allSection" class="space-y-5 hidden">
+
+
             <!-- card 1  -->
-            <div class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+            <div id="allCards" class="all_cards  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
                 <!-- left side  -->
                 <div class="space-y-4">
                     <div>
                         <!-- company name  -->
-                        <h1 class="font-medium text-[1.25rem]">Mobile First Corp</h1>
+                        <h1 class="company_name  font-medium text-[1.25rem]">Mobile First Corp</h1>
                         <!-- job role  -->
-                        <p class="font-light">React Native Developer</p>
+                        <p class="job_role  font-light">React Native Developer</p>
                     </div>
                     <!-- salary and work time  -->
-                    <p class="text-xs">Remote
+                    <p class="salary_work   text-xs">Remote
                         •
                         Full-time
                         •
@@ -80,9 +90,12 @@
 
                     <!-- apply or reject this screen show  -->
                     <div class="space-y-3">
-                        <p id="appliedBtn" class=" w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">Not Applied
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
                         </p>
-                        <p class="text-[14px] md:text-[1rem]">Build cross-platform mobile applications using React
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">Build cross-platform mobile applications
+                            using React
                             Native. Work on products used by
                             millions of users worldwide.</p>
                     </div>
@@ -90,10 +103,11 @@
                     <!-- button main  -->
                     <div class="space-x-3">
                         <!-- interviewButton  -->
-                        <button id="interviewButton" class="btn btn-outline btn-success">Interview</button>
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
 
                         <!-- rejectedButton  -->
-                        <button id="rejectedButton" class="btn btn-outline btn-error">Rejected</button>
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
                     </div>
 
 
@@ -101,67 +115,424 @@
 
                 <!-- right side dlt btn  -->
                 <div class="pt-5  ">
-                    <button id="dltBtn"
-                    class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
             </div>
 
             <!-- card 2  -->
-            <div class="  flex  justify-between gap-2 bg-base-200  shadow rounded-lg p-3 md:p-6">
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
                 <!-- left side  -->
                 <div class="space-y-4">
                     <div>
                         <!-- company name  -->
-                        <h1 class="font-medium text-[1.25rem]">Mobile First Corp</h1>
+                        <h1 class="company_name  font-medium text-[1.25rem]">WebFlow Agency</h1>
                         <!-- job role  -->
-                        <p class="font-light">React Native Developer</p>
+                        <p class="job_role  font-light">Web Designer & Developer</p>
                     </div>
                     <!-- salary and work time  -->
-                    <p class="text-xs">Remote
+                    <p class="salary_work   text-xs">Los Angeles, CA
                         •
-                        Full-time
+                        Part-time
                         •
-                        $130,000 - $175,000</p>
+                        $80,000 - $120,000</p>
 
                     <!-- apply or reject this screen show  -->
                     <div class="space-y-3">
-                        <p id="appliedBtn" class=" w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">Not Applied
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
                         </p>
-                        <p class="text-[14px] md:text-[1rem]">Build cross-platform mobile applications using React
-                            Native. Work on products used by
-                            millions of users worldwide.</p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">Create stunning web experiences for
+                            high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                     </div>
 
                     <!-- button main  -->
                     <div class="space-x-3">
                         <!-- interviewButton  -->
-                        <button id="interviewButton" class="btn btn-outline btn-success">Interview</button>
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
 
                         <!-- rejectedButton  -->
-                        <button id="rejectedButton" class="btn btn-outline btn-error">Rejected</button>
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
                     </div>
 
 
                 </div>
 
                 <!-- right side dlt btn  -->
-                <div class="pt-5 ">
-                    <button id="dltBtn" class="btn hover:bg-red-300 border-[#c10606]"><i
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 3  -->
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="company_name  font-medium text-[1.25rem]">DataViz Solutions</h1>
+                        <!-- job role  -->
+                        <p class="job_role  font-light">Data Visualization Specialist</p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="salary_work   text-xs">Boston, MA
+                        •
+                        Full-time
+                        •
+                        $125,000 - $165,000</p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
+                        </p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">Transform complex data into compelling
+                            visualizations. Required skills: D3.js, React, and strong analytical thinking.
+                        </p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 4 -->
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="company_name  font-medium text-[1.25rem]">
+                            CloudFirst Inc
+                        </h1>
+                        <!-- job role  -->
+                        <p class="job_role  font-light">
+                            Backend Developer
+                        </p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="salary_work   text-xs">
+                        Seattle, WA
+                        •
+                        Full-time
+                        •
+                        $140,000 - $190,000
+                    </p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
+                        </p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">
+                            Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps
+                            practices and cloud infrastructure
+                        </p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 5 -->
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="company_name  font-medium text-[1.25rem]">
+                            Innovation Labs
+                        </h1>
+                        <!-- job role  -->
+                        <p class="job_role  font-light">
+                            UI/UX Engineer
+                        </p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="salary_work   text-xs">
+                        Austin, TX
+                        •
+                        Full-time
+                        •
+                        $110,000 - $150,000
+                    </p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
+                        </p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">
+                            Create beautiful and functional user interfaces for our suite of products. Strong design
+                            skills and frontend development expertise required.
+                        </p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 6 -->
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="company_name  font-medium text-[1.25rem]">
+                            MegaCorp Solutions
+                        </h1>
+                        <!-- job role  -->
+                        <p class="job_role  font-light">
+                            JavaScript Developer
+                        </p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="salary_work   text-xs">
+                        New York, NY
+                        •
+                        Full-time
+                        •
+                        $130,000 - $170,00
+                    </p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
+                        </p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">
+                            Build enterprise applications with JavaScript and modern frameworks. We offer competitive
+                            compensation, health insurance, and professional development opportunities.
+                        </p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 7 -->
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="company_name  font-medium text-[1.25rem]">
+                            StartupXYZ
+                        </h1>
+                        <!-- job role  -->
+                        <p class="job_role  font-light">
+                            Full Stack Engineer
+                        </p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="salary_work   text-xs">
+                        Remote
+                        •
+                        Full-time
+                        •
+                        $120,000 - $160,000
+                    </p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
+                        </p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">
+                            Join our fast-growing startup and work on our core platform. Experience with Node.js and
+                            React required. Great benefits and equity package included.
+                        </p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
+
+            <!-- card 8 -->
+            <div id="allCards" class="  flex  justify-between  bg-base-200  shadow rounded-lg p-3 md:p-6">
+                <!-- left side  -->
+                <div class="space-y-4">
+                    <div>
+                        <!-- company name  -->
+                        <h1 class="company_name  font-medium text-[1.25rem]">
+                            TechCorp Industries
+                        </h1>
+                        <!-- job role  -->
+                        <p class="job_role  font-light">
+                            Senior Frontend Developer
+                        </p>
+                    </div>
+                    <!-- salary and work time  -->
+                    <p class="salary_work   text-xs">
+                        San Francisco, CA
+                        •
+                        Full-time
+                        •
+                        $130,000 - $175,000
+                    </p>
+
+                    <!-- apply or reject this screen show  -->
+                    <div class="space-y-3">
+                        <p id="appliedBtn" class="Not_Applied w-[150px] text-center font-medium py-2 px-2 bg-[#eef4ff]">
+                            Not Applied
+                        </p>
+                        <!-- job_descriptions -->
+                        <p class="job_descriptions  text-[14px] md:text-[1rem]">
+                            We are looking for an experienced Frontend Developer to build scalable web applications
+                            using React and TypeScript. You will work with a talented team on cutting-edge projects.
+                        </p>
+                    </div>
+
+                    <!-- button main  -->
+                    <div class="space-x-3">
+                        <!-- interviewButton  -->
+                        <button id="interviewButton"
+                            class="interview_Button  btn btn-outline btn-success">Interview</button>
+
+                        <!-- rejectedButton  -->
+                        <button id="rejectedButton" class="rejected_Button btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+
+                </div>
+
+                <!-- right side dlt btn  -->
+                <div class="pt-5  ">
+                    <button id="dltBtn" class="btn  hover:bg-red-300 border-[#c10606]  "><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
             </div>
 
 
+
         </section>
+
+
+
+        <!-- Interview section  -->
+        <section id="interviewCards" class="space-y-5 hidden">
+            <div class=" text-center bg-base-200  shadow rounded-lg py-3 md:py-10">
+                <img class="mx-auto" src="jobs.png" alt="">
+                <p class="text-xl">No jobs available</p>
+                <p>Check back soon for new job opportunities</p>
+            </div>
+        </section>
+
+
+
+        <!-- rejected section  -->
+        <section id="rejectedCards" class="space-y-5 hidden">
+            <div class=" text-center bg-base-200  shadow rounded-lg py-3 md:py-10">
+                <img class="mx-auto" src="jobs.png" alt="">
+                <p class="text-xl">No jobs available</p>
+                <p>Check back soon for new job opportunities</p>
+            </div>
+        </section>
+
+
     </main>
 
 
 
 
     <script src="node.js"></script>
+    <script src="interview.js"></script>
+    <script src="deno.js"></script>
 </body>
 
 </html>
